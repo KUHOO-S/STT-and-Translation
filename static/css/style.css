@@ -1,0 +1,55 @@
+:root {
+    --backgroundColor: rgba(246, 241, 209);
+    --colorShadeA: rgb(106, 163, 137);
+    --colorShadeB: rgb(121, 186, 156);
+    --colorShadeC: rgb(150, 232, 195);
+    --colorShadeD: rgb(187, 232, 211);
+    --colorShadeE: rgb(205, 255, 232);
+  }
+  
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+  * {
+    box-sizing: border-box;
+  }
+  *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'OpenSans', sans-serif;
+    font-size: 1rem;
+    line-height: 2;
+    display: flex;
+            align-items: center;
+            justify-content: center;
+    margin: 0;
+    
+    background: var(--backgroundColor);
+  }
+  button ,select {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: inherit;
+  }
+  
+  button.big-button,select {
+     padding: 1em 2em;
+     border: 2px solid grey;
+    border-radius: 1em;
+    background: whitesmoke;
+  transform-style: preserve-3d;
+     transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  }
+textarea { font-size: 50px;
+    margin: 10px; height: 200px; width: 400px;
+  background-color:whitesmoke;
+  border: 2px solid grey;
+    border-radius: 1em;
+ }

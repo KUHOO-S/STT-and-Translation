@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Shitty Translations.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body class="jumbotron">
+  <div class="container-fluid">
+  <div class="jumbotron text-center container-fluid">
+    <h1>Welcome to Good Translations.com</h1>
+    <p>Type or speak through mic </p> 
+  </div>
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-md-6 my-4" id="controls">
+        <i class="fa fa-microphone" style="font-size:55px;" id="recordButton"></i>
+      </div>
+
+      <div class="col-md-6 my-4" id="langdiv">
+        <select class="col-md-12 " id="langSelect">
+          <option disabled selected value> --    Select an option    -- </option>
+          <option value="en-US_BroadbandModel">English</option>
+          <option value="ko-KR_NarrowbandModel">Korean</option>
+          <option value="ja-JP_NarrowbandModel">Japanese</option>
+          <option value="fr-CA_BroadbandModel">French</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col-md-6 my-4">
+        <textarea class="col-md-12" id="STT" placeholder="Enter The text here or speak through microphone"></textarea>
+      </div>
+
+      <div class="col-md-6 my-4">
+        <textarea class="col-md-12" id="translation" placeholder="Translation"></textarea>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
