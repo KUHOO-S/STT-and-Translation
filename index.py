@@ -1,18 +1,21 @@
+import os
+import json
+import time
+import io
 from flask import Flask,abort, redirect, url_for
 from flask import request
 from flask import render_template
-import os
-import json
 from os.path import join, dirname
 from ibm_watson import SpeechToTextV1
 from ibm_watson.websocket import RecognizeCallback, AudioSource
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-import time
 from ibm_watson import LanguageTranslatorV3
 from ibm_watson import TextToSpeechV1
-lang1=""
-lang2=""
-import io
+
+IAMAuth1=""
+IAMAuth2=""
+service_url1=""
+service_url2=""
 app = Flask(__name__, static_url_path='/static')
 port = int(os.getenv('PORT', 8000))
 
@@ -20,30 +23,29 @@ port = int(os.getenv('PORT', 8000))
 #Speech to text
 def STTFunc(bff):  
     print("inside STT")
-    authenticator = IAMAuthenticator('')
+    authenticator = IAMAuthenticator(IAMAuth1)
     speech_to_text = SpeechToTextV1(
         authenticator=authenticator
     )
-    speech_to_text.set_service_url('')
+    speech_to_text.set_service_url(service_url1)
     speech_recognition_results = speech_to_text.recognize(audio=bff,content_type='audio/wav',).get_result()
     x=speech_recognition_results["results"][0]["alternatives"][0]["transcript"]
     print(speech_recognition_results)
     return x
 
 #Translator
-def Translator(lang,y):
+def Translator(lang,data):
     #mymodel=lang1[:2]+'-'+lang[:2]
     mymodel='en-'+lang[:2]
-    print(mymodel)
-    
-    authenticator = IAMAuthenticator('')
+    #print(mymodel)
+    authenticator = IAMAuthenticator(IAMAuth2)
     language_translator = LanguageTranslatorV3(
         version='2018-05-01',
         authenticator=authenticator
     )
-    language_translator.set_service_url('')
+    language_translator.set_service_url(service_url2)
     translation = language_translator.translate(
-        text=y,
+        text=data,
         model_id=mymodel).get_result()
     print(translation['translations'][0]['translation'])
     return translation['translations'][0]['translation']
