@@ -12,10 +12,16 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from ibm_watson import LanguageTranslatorV3
 from ibm_watson import TextToSpeechV1
 
-IAMAuth1=""
-IAMAuth2=""
-service_url1=""
-service_url2=""
+
+config = ".env" if os.path.exists(".env") else "example.env"
+load_dotenv(dotenv_path=config)
+
+IAMAuth1=os.getenv("IAMAuth1")
+IAMAuth2=os.getenv("IAMAuth2")
+service_url1=os.getenv("service_url1")
+service_url2=os.getenv("service_url2")
+
+
 app = Flask(__name__, static_url_path='/static')
 port = int(os.getenv('PORT', 8000))
 
