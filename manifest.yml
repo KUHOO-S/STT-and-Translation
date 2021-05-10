@@ -1,5 +1,5 @@
 ---
 applications:
- - name: ShittyTranslations.com
+ - name: GoodTranslations.com
    random-route: true
    memory: 128M
