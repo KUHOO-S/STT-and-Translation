@@ -1,19 +1,7 @@
 # STT-and-Translation
-Web based app for speech to text and translations , using IBM cloud Api , hosted on IBM cloud foundry.
-### Flask - Html - Css - Python - Cloudfoundry Api
-
-## Table of Contents
-* [Introduction](#introduction)
-* [Working](#working)
-* [Installation](#installation)
-* [References](#references)
-
-## Introduction
-This is a Speech-to-Text and Translation Web App, built on python using Flask framework and IBM CLoud APIs.
-## Working
-Working with IBM Apis:
-Taking audio input through browser and without locally saving it passing it to the Speech-to-Text API by first converting the auido stream to bytes stream. The API result is then pass to the Translation module and the result is diplayed.
-Implementation Demo screenshots can be found in the [Report.pdf](https://github.com/KUHOO-S/QuizzyWizzy/blob/master/Report.pdf) file
+A Speech-to-Text and Translation Web App, built on python using Flask framework and IBM CLoud APIs. It is hosted using IBM Cloudfoundry platform.
+### Flask • Html • Css • Js	• Python	• IBM Cloud 	• Cloudfoundry 
+Taking audio input through browse, passing it to the backend with an AJAX Call.The recieved audio stream  is not saved locally instead is first converted to byte stream and the given to Speech-to-Text module. The API result is then pass to the Translation module and the result is diplayed.
 
 ## Installation
 
